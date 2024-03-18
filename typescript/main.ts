@@ -10,6 +10,10 @@ const TokenType = {
 	DIVIDE: "DIVIDE",
 	ASSIGN: "ASSIGN",
 
+	// PUNCTUATION
+	SEMI_COLON: "SEMI_COLON",
+	COMMA: "COMMA",
+	DOT: "DOT",
 	L_PAREN: "L_PAREN",
 	R_PAREN: "R_PAREN",
 	L_BRACE: "L_BRACE",
@@ -135,6 +139,7 @@ class Lexer {
 					break
 				case ")":
 					this.makeToken(TokenType.R_PAREN)
+					break
 				case "{":
 					this.makeToken(TokenType.L_BRACE)
 					break
@@ -143,6 +148,15 @@ class Lexer {
 					break
 				case "=":
 					this.makeToken(TokenType.ASSIGN)
+					break
+				case ":":
+					this.makeToken(TokenType.SEMI_COLON)
+					break
+				case ",":
+					this.makeToken(TokenType.COMMA)
+					break
+				case ".":
+					this.makeToken(TokenType.DOT)
 					break
 
 				case "/": {
